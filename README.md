@@ -316,3 +316,15 @@ The following is a sample result for friends_pingtimes(): </h4>
 	  }
 }
 ```
+
+### Workflows
+1. Extract facebook auth token and id using 'python print_auth_token.py <user email> <user passsword>'
+2. Run 'sh post_auth.sh <data json> file' where data json file has format:
+```
+{
+	"facebook_token":"<token>"
+	"facebook_id":"<facebok id>"
+}
+```
+3. From the previous output, under user extract "api_token" under "user".
+4. Have fun!  Run any of the shell scripts now.  Your X-Auth-Token in the curl calls in the shell scripts is simply your api_token.  The first argment typically corresponds to a simple JSON file of the arguments (see above for formatting)
